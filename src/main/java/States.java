@@ -4,9 +4,13 @@ public enum States {
     Maryland(0.05),
     Virginia(0.06);
 
-    private final double taxRate;
+    private double taxRate;
 
-    StateTax(double taxRate) {
+    void StateTax(double taxRate) {
+        this.taxRate = taxRate;
+    }
+
+    States(double taxRate) {
         this.taxRate = taxRate;
     }
 
