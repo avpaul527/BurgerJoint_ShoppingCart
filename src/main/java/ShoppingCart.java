@@ -20,11 +20,28 @@ public class ShoppingCart implements TaxOnOrders{
         return items;
     }
 
-    public double
+    public double totalNoTax(){
+        double total = 0;
+        for (Item item : items){
+            total = total + item.getPrice();
+        }
+        return total;
+    }
 
 
     @Override
     public double calculateStateTax(States state) {
-        return 0;
+        double total = totalNoTax();
+        double taxRate = state.getTaxRate();
+        return total * taxRate;
     }
+
+    public double calculateFinalTotal(Customer customer){
+        double subtotal = totalNoTax();
+        double stateTax = calculateStateTax(Customer.getState());
+        return subtotal + stateTax;
+
+    }
+
+
 }
