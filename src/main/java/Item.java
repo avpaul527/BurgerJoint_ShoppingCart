@@ -1,11 +1,11 @@
 public abstract class Item {
+
     private String name;
     private double price;
     private int quantity;
     private final int quantityInStock = 100;
 
-    public Item() {
-    }
+    public Item() {}
 
     public Item(String name, double price, int quantity) {
         this.name = name;
