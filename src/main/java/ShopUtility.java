@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ShopUtility {
@@ -8,7 +10,20 @@ public class ShopUtility {
         }
         return total;
     }
-    public static void printReceipt(ArrayList<Item> items, double total, double tax){
+    public static void printReceipt(){
+        String receiptFormat =
+                "DATE %s\n" + "TIME %s\n" + "\n" + "AMT $ %.2f\n" + "TAX $ %.2f\n" + "\n" + "SALE $ %.2f\n";
+
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss");
+        String date = now.format(formatter);
+        String time = now.format(DateTimeFormatter.ofPattern("hh:mm:ss a"));
+
+        double total = calculateTotal();
+        double tax = calculateStateTax();
+        double sale = total + tax;
+
+        System.out.printf(receiptFormat, date, time, total, tax, sale);
 
     }
 }
