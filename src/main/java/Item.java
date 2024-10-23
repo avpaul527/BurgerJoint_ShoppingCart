@@ -40,7 +40,11 @@ public abstract class Item {
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        if (quantity >= 0){
+            this.quantity = quantity;
+        }else{
+            System.out.println("Amount entered incorrect please try again");
+        }
     }
 
     public int getQuantityInStock() {
