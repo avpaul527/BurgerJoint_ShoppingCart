@@ -1,7 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart implements TaxOnOrders{
-    private ArrayList<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
+   // private List<ShoppingCart> shoppingCarts = new ArrayList<>();
+
+
 
     public void addItem(Item item, int quantity){
         if (item.isInStock(quantity)) {
@@ -16,8 +20,9 @@ public class ShoppingCart implements TaxOnOrders{
         items.remove(item);
     }
 
-    public ArrayList<Item> getItems(){
+    public List<Item> getItems(){
         return items;
+
     }
 
     public double totalNoTax(){
@@ -38,10 +43,20 @@ public class ShoppingCart implements TaxOnOrders{
 
     public double calculateFinalTotal(Customer customer){
         double subtotal = totalNoTax();
-        double stateTax = calculateStateTax(Customer.getState());
+        double stateTax = calculateStateTax(customer.getState());
         return subtotal + stateTax;
 
     }
 
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
+    public void printItems(ShoppingCart customer){
+       for(var i : getItems()){
+           System.out.println(i);
+       }
+
+    }
 
 }
