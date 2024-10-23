@@ -1,4 +1,5 @@
-![ShoppingCart drawio](https://github.com/user-attachments/assets/01acc26a-c0fd-44f9-a183-654242f2a52d)
+![Image20241023124036](https://github.com/user-attachments/assets/012e564f-0a6f-4fd4-a7e6-f53740132817)
+
 
 # Group Collaboration - Burger Joint
 ## Group Members: Alexandria, Efrain, Chaela, Dayquon, Collins
