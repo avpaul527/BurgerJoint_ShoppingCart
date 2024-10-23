@@ -2,12 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Item {
-
     private String name;
     private double price;
     private int quantity;
     private final int quantityInStock = 100;
-    private ShoppingCart shoppingCarts;
+
     public Item() {}
 
     public Item(String name, double price, int quantity) {
@@ -15,8 +14,6 @@ public abstract class Item {
         this.price = price;
         this.quantity = quantity;
     }
-
-
 
     public String getName() {
         return name;
@@ -46,24 +43,12 @@ public abstract class Item {
         return quantityInStock;
     }
 
-    public double getPrice(String name, double price) {
-        return price;
-
-    }
-
     public boolean isInStock(int quantity) {
-        if (quantityInStock > quantity) {
-            return true;
-        } else {
-            return false;
-        }
+        return quantityInStock >= quantity;
     }
 
-    public ShoppingCart getShoppingCarts() {
-        return shoppingCarts;
+    @Override
+    public String toString() {//created to string to fix formatting issue
+        return String.format("%s: $%.2f x %d", name, price, quantity);
     }
-//
-//    public void setShoppingCarts(List<ShoppingCart> shoppingCarts) {
-//        this.shoppingCarts = shoppingCarts;
-//    }
 }

@@ -1,22 +1,16 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Customer {
     private String name;
-    private static States state;
-    //public List<ShoppingCart> items = new ArrayList<>();
-    public ShoppingCart shoppingCart;
-    public  Customer(){
+    private States state; // Changed to non-static
+    private ShoppingCart shoppingCart;
 
-    }
+    public Customer() {}
 
     public Customer(String name, States state, ShoppingCart shoppingCart) {
         this.name = name;
         this.state = state;
         this.shoppingCart = shoppingCart;
-
-
-
     }
 
     public String getName() {
@@ -43,7 +37,7 @@ public class Customer {
         this.shoppingCart = shoppingCart;
     }
 
-    public void getItemss(ShoppingCart shoppingCart){
-        System.out.println(String.valueOf(shoppingCart));
+    public void printItems() {
+        shoppingCart.printItems(); // another change that calls printItems directly from shoppingCart
     }
 }

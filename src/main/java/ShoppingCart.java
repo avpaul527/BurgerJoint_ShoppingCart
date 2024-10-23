@@ -1,62 +1,47 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingCart implements TaxOnOrders{
+public class ShoppingCart implements TaxOnOrders {
     private List<Item> items = new ArrayList<>();
-   // private List<ShoppingCart> shoppingCarts = new ArrayList<>();
 
-
-
-    public void addItem(Item item, int quantity){
+    public void addItem(Item item, int quantity) {
         if (item.isInStock(quantity)) {
             item.setQuantity(quantity);
             items.add(item);
         } else {
-            System.out.println(item.getName() + "does not have enough in stock");
+            System.out.println(item.getName() + " does not have enough in stock");
         }
     }
 
-    public void removeItem(Item item){
+    public void removeItem(Item item) {
         items.remove(item);
     }
 
-    public List<Item> getItems(){
+    public List<Item> getItems() {
         return items;
-
     }
 
-    public double totalNoTax(){
+    public double totalNoTax() {
         double total = 0;
-        for (Item item : items){
-            total = total + item.getPrice();
+        for (Item item : items) {
+            total += item.getPrice() * item.getQuantity(); //Changed to account for quantity instead
         }
         return total;
     }
 
-
     @Override
     public double calculateStateTax(States state) {
-        double total = totalNoTax();
         double taxRate = state.getTaxRate();
-        return total * taxRate;
+        return totalNoTax() * taxRate;
     }
 
-    public double calculateFinalTotal(Customer customer){
-        double subtotal = totalNoTax();
-        double stateTax = calculateStateTax(customer.getState());
-        return subtotal + stateTax;
-
+    public double calculateFinalTotal(Customer customer) {
+        return totalNoTax() + calculateStateTax(customer.getState());
     }
 
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
+    public void printItems() {
+        for (Item item : getItems()) {
+            System.out.println(item);
+        }
     }
-
-    public void printItems(ShoppingCart customer){
-       for(var i : getItems()){
-           System.out.println(i);
-       }
-
-    }
-
 }
