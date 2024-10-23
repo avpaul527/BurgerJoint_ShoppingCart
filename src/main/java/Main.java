@@ -12,12 +12,13 @@ public class Main {
         Customer customer = new Customer("Mike", States.Pennsylvania, shoppingCart);
         customer.printItems();
         System.out.println(" ");
+        System.out.println("\nReceipt for Customer 1 below:\n");
         ShopUtility.printReceipt(customer);
 
 
         Customer customer2 = new Customer("hamlin", States.Delaware, shoppingCart);
         System.out.println(" ");
-        System.out.println("Receipt for Customer 2 below");
+        System.out.println("\nReceipt for Customer 2 below:\n");
 
         ShopUtility.printReceipt(customer2);
     }
