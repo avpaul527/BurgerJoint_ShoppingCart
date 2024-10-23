@@ -1,3 +1,5 @@
+![ShoppingCart drawio](https://github.com/user-attachments/assets/01acc26a-c0fd-44f9-a183-654242f2a52d)
+
 # Group Collaboration - Burger Joint
 ## Group Members: Alexandria, Efrain, Chaela, Dayquon, Collins
 
@@ -39,7 +41,7 @@
 **HERE ARE A FEW REFERENCES THAT MAY HELP YOU:**
 - GitHub Cheat Sheet: https://education.github.com/git-cheat-sheet-education.pdf
 - Some notes about GitHub and commands: https://github.com/avpaul527/PluralSightHW/blob/main/README.md
-- Here are some article that Mikaila recommended:
+- Here are some articles that Mikaila recommended:
   - https://vickysteeves.gitlab.io/collaborating-with-git/collaborating-with-git.html
   - https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67
   - https://medium.com/@androidmatheny/using-git-and-github-on-group-projects-d636be2cdd4d
