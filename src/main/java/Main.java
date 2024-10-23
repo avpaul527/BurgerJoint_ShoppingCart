@@ -11,7 +11,14 @@ public class Main {
 
         Customer customer = new Customer("Mike", States.Pennsylvania, shoppingCart);
         customer.printItems();
-
+        System.out.println(" ");
         ShopUtility.printReceipt(customer);
+
+
+        Customer customer2 = new Customer("hamlin", States.Delaware, shoppingCart);
+        System.out.println(" ");
+        System.out.println("Receipt for Customer 2 below");
+
+        ShopUtility.printReceipt(customer2);
     }
 }

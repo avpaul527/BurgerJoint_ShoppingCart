@@ -48,7 +48,7 @@ public abstract class Item {
     }
 
     @Override
-    public String toString() {//created to string to fix formatting issue
+    public String toString() {//created tostring with string format to fix formatting issue when trying to print items
         return String.format("%s: $%.2f x %d", name, price, quantity);
     }
 }
