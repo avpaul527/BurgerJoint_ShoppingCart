@@ -28,7 +28,11 @@ public abstract class Item {
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        if (price >= 0){
+            this.price = price;
+        }else{
+            System.out.println("Price cannot be negative");
+        }
     }
 
     public int getQuantity() {
